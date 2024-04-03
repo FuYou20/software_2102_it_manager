@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+    div{
+        border: 3px double #666;
+        border-color: blue ;
+    }
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/maps/shan1_dong1_zi1_bo2.js"></script>
+    <script type="text/javascript" src="../../table1.js"></script>
+</head>
+<body style="background: black">
+<div style="display:flex;">
+
+    <div id="table1" class="chart-container" style="width:500px; height:300px; margin:70px auto" ></div>
+     <div id="hotMap" class="chart-container" style="width:350px; height:500px; margin:0 auto" ></div>
+     <div id="table2" class="chart-container" style="width:490px; height:300px; margin:70px auto" ></div>
+</div>
+
+    <script>
+        var chart_hotMap = echarts.init(
+            document.getElementById('hotMap'), 'white', {renderer: 'canvas'});
+        var table1 = echarts.init(
+            document.getElementById('table1'),'white',{renderer: 'canvas'}
+        )
+         var table2 = echarts.init(
+            document.getElementById('table2'),'white',{renderer: 'canvas'}
+        )
+        var option_hotMap = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "color": [
+        "#5470c6",
+        "#91cc75",
+        "#fac858",
+        "#ee6666",
+        "#73c0de",
+        "#3ba272",
+        "#fc8452",
+        "#9a60b4",
+        "#ea7ccc"
+    ],
+    "series": [
+        {
+            "type": "map",
+            "name": "\u6dc4\u535a\u5730\u56fe",
+            "label": {
+                "show": true,
+                "margin": 100,
+                "size":5
+            },
+            "map": "\u6dc4\u535a",
+            "data": [
+                {
+                    "name": "\u5f20\u5e97\u533a",
+                    "value": 9198
+                },
+                {
+                    "name": "\u6052\u53f0\u53bf",
+                    "value": 8990
+                },
+                {
+                    "name": "\u6dc4\u5ddd\u533a",
+                    "value": 6328
+                },
+                {
+                    "name": "\u535a\u5c71\u533a",
+                    "value": 5727
+                },
+                {
+                    "name": "\u4e34\u6dc4\u533a",
+                    "value": 8218
+                },
+                {
+                    "name": "\u5468\u6751\u533a",
+                    "value": 7101
+                }
+                ,
+                {
+                    "name": "\u6c82\u6e90\u53bf",
+                    "value": 6000
+                },
+                 ,
+                {
+                    "name": "\u9ad8\u9752\u53bf",
+                    "value": 6300
+                }
+                 ,
+                {
+                    "name": "\u6853\u53f0\u53bf",
+                    "value": 8990
+                }
+            ],
+            "roam": true,
+            "aspectScale": 0.75,
+            "nameProperty": name,
+            "selectedMode": false,
+            "zoom": 1,
+            "zlevel": 0,
+            "z": 2,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "mapValueCalculation": "sum",
+            "showLegendSymbol": true,
+            "emphasis": {}
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {},
+            "show":false,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1,
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": false,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": true,
+            "text": "\u6dc4\u535a\u5e02\u4e8c\u624b\u623f\u4ef7\u70ed\u529b\u5730\u56fe",
+            "target": "blank",
+            "subtarget": "blank",
+            "padding": 10,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": "false",
+            "textStyle": {
+            "fontSize": 14,
+                "color":"white"
+        },
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 10000,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "hoverLink": true,
+        "orient": "vertical",
+        "padding": 5,
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        var table1_option = {
+  title: {
+    text: '户型统计',
+    left: 'center'
+  },
+  tooltip: {
+      show:false,
+    trigger: 'item'
+  },
+  legend: {
+       "textStyle": {
+            "color": 'white'
+        },
+    orient: 'vertical',
+    left: 'left'
+  },
+  series: [
+    {
+        show:false,
+      name: 'Access From',
+      type: 'pie',
+      radius: '50%',
+      data: [
+         { value: 1394, name: '3室2厅1厨' },
+{ value: 283, name: '4室2厅1厨' },
+        { value: 175, name: '3室1厅1厨' },
+        { value: 469, name: '2室2厅1厨' },
+          { value: 177, name: '2室1厅1厨' },
+        { value: 200, name: '其他' }
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+  ]
+};
+
+        var table2_option = {
+            title:{
+                    text: '二手房均价前十小区',
+    left: 'center',
+    top: 20,
+    textStyle: {
+      color: 'white'
+    }
+            },
+  dataset: [
+    {
+      dimensions: ['name', 'price'],
+      source: [
+        ['齐润花园', 16524], ['方正凤凰国际',  16064], ['曦园', 18163], ['龙泰国际', 15482], ['黄金国际', 10904], ['民泰龙泰贵府', 16225], ['中央公园',  10139], ['恒大帝景', 18446], ['兴业家园', 12372]
+      ]
+    },
+    {
+      transform: {
+        type: 'sort',
+        config: { dimension: 'price', order: 'desc' }
+      }
+    }
+  ],
+  xAxis: {
+    type: 'category',
+    axisLabel: { interval: 0, rotate: 60 }
+  },
+  yAxis: {
+      type:'value'
+  },
+  series: {
+    type: 'bar',
+    encode: { x: 'name', y: 'price' },
+    datasetIndex: 1
+  }
+};
+          chart_hotMap.setOption(option_hotMap);
+        table1.setOption(table1_option);
+        table2.setOption(table2_option)
+    </script>
+</body>
+</html>
